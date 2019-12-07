@@ -1,24 +1,24 @@
 module.exports = function (sequelize, DataTypes) {
     var Project = sequelize.define("Project", {
 
-        project_id: {
+        projectId: {
             type: DataTypes.INTEGER
 
         },
 
-        user_id: {
+        userId: {
             type: DataTypes.STRING
 
         },
-        project_name: {
+        projectName: {
             type: DataTypes.STRING
 
         },
-        due_date: {
+        dueDate: {
             type: DataTypes.DATE
 
         },
-        projecy_stage: {
+        projecyStage: {
             type: DataTypes.STRING
         }
     });
