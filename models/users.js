@@ -31,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
             defaultValue: "Personal"
         },
         dateOfBirth: {
-            type: DataTypes.STRING,
+            type: DataTypes.DATE,
             defaultValue: "Personal"
         },
         isAdmin: {
