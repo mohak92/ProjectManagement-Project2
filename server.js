@@ -1,6 +1,7 @@
 require("dotenv").config();
 var express = require("express");
 var db = require("./models");
+var app = express();
 var PORT = process.env.PORT || 8080;
 
 // Middleware
