@@ -1,58 +1,25 @@
-var db = require("../models");
+var path = require("path");
 
-module.exports = function(app) {
-  // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("../public/index.html", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+module.exports = function (app) {
+
+  app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("../public/signup.html", {
-        example: dbExample
-      });
-    });
+  app.get("/present", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/homepage.html"));
   });
 
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("../public/homepage.html", {
-        example: dbExample
-      });
-    });
+  app.get("/future", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("../public/projects.html", {
-        example: dbExample
-      });
-    });
+  app.get("/previous", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/tasks.html"));
   });
 
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("../public/tasks.html", {
-        example: dbExample
-      });
-    });
+  app.get("/addNew", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/projects.html"));
   });
 
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("../public/profile.html", {
-        example: dbExample
-      });
-    });
-  });
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
 };
