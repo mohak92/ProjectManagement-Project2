@@ -5,10 +5,10 @@ module.exports = function (sequelize, DataTypes) {
 
         },
 
-        userId: {
-            type: DataTypes.STRING
+        // userId: {
+        //     type: DataTypes.STRING
 
-        },
+        // },
         projectName: {
             type: DataTypes.STRING
 
@@ -22,12 +22,12 @@ module.exports = function (sequelize, DataTypes) {
         },
     }),
     this.Task = sequelize.define("Task", {
-        userId: {
-            type: DataTypes.INTEGER
-        },
-        projectId: {
-            type: DataTypes.INTEGER
-        },
+        // userId: {
+        //     type: DataTypes.INTEGER
+        // },
+        // projectId: {
+        //     type: DataTypes.INTEGER
+        // },
         taskName: {
             type: DataTypes.STRING
         },
@@ -36,20 +36,20 @@ module.exports = function (sequelize, DataTypes) {
         }
     }),
     this.User = sequelize.define("User", {
-        task_id: {
-              type: DataTypes.STRING,
-              allowNull: false,
-              validate: {
-                  len: [1,8]
-              }
-          },
-          project_id: {
-              type: DataTypes.TEXT,
-              allowNull: false,
-              validate: {
-                  len: [1,10]
-              }
-          },
+        // task_id: {
+        //       type: DataTypes.STRING,
+        //       allowNull: false,
+        //       validate: {
+        //           len: [1,8]
+        //       }
+        //   },
+        //   project_id: {
+        //       type: DataTypes.TEXT,
+        //       allowNull: false,
+        //       validate: {
+        //           len: [1,10]
+        //       }
+        //   },
           email: {
               type: DataTypes.STRING,
               defaultValue: "Personal"
@@ -75,6 +75,9 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
     this.Project.hasMany(this.Task);
-    this.Project.belongsTo(this.User)
+    this.Project.belongsToMany(this.User, {through: 'UserProject'});
+    this.Task.belongsTo(this.Project);
+    this.User.hasMany(this.Task);
+    this.User.belongsToMany(this.Project, {through: 'UserProject'});
     return Project;
 };
