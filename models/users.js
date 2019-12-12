@@ -36,7 +36,10 @@ module.exports = function(sequelize, DataTypes) {
         },
         isAdmin: {
             type: DataTypes.BOOLEAN
-        }
-      });
+        },
+    },
+    User.associate = models => {
+    User.hasMany(models.Projects);
+    });
       return User;
   };
