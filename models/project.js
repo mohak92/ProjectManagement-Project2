@@ -20,7 +20,11 @@ module.exports = function (sequelize, DataTypes) {
         },
         projectStage: {
             type: DataTypes.STRING
-        }
-    });
+        },
+    },
+        Project.associate = models => {
+            Project.hasMany(models.Task)
+            Projects.belongsTo(models.User)
+        });
     return Project;
 };

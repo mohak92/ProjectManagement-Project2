@@ -12,6 +12,9 @@ module.exports = function (sequelize, DataTypes) {
         taskDueDate: {
             type: DataTypes.DATE
         }
+    },
+    Task.associate = function(models){
+    Task.hasOne(models.Project);
     });
     return Task;
 };
