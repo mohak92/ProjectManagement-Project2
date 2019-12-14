@@ -41,10 +41,10 @@ db.sequelize.sync(syncOptions).then(function () {
   });
 });
 
-app.listen(5000, function (err) {
-  if (!err)
-    console.log("\nSite is live");
-  else console.log(err)
-});
+// app.listen(PORT, function (err) {
+//   if (!err)
+//     console.log("\nSite is live");
+//   else console.log(err)
+// });
 
 module.exports = app;
