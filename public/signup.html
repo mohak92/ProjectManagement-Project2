@@ -20,7 +20,7 @@
                         <h3 class="panel-title">Please Sign Up</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <!-- <form role="form">
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
@@ -55,12 +55,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <a input type="submit" value="Register" class="btn btn-info btn-block"
-<<<<<<< HEAD
-                                href="/present">Register</a>
-=======
-                                href="/index.html">Register</a>
->>>>>>> 32d8af831e4668fd3f6b9e84762b57210cef9814
+                            <input type="button" class="btn btn-primary w-25 m-3 btn-search"
+                                onclick="window.location.href = 'file:///Users/AnishSchool/Desktop/ProjectManagement-Project2/public/homepage.html';"
+                                value="Register" />
+                        </form> -->
+
+                        <form id="signup" name="signup" method="post" action="/signup">
+                            <label for="email">Email Address</label>
+                            <input class="text" name="email" type="email" />
+                            <label for="firstname">Firstname</label>
+                            <input name="firstname" type="text" />
+                            <label for="lastname">Lastname</label>
+                            <input name="lastname" type="text" />
+                            <label for="password">Password</label>
+                            <input name="password" type="password" />
+                            <input class="btn" type="submit" value="Sign Up" />
                         </form>
                     </div>
                 </div>
