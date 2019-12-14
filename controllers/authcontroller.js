@@ -8,3 +8,18 @@ exports.signup = function (req, res) {
 exports.signin = function (req, res) {
     res.render('signin');
 };
+
+exports.homepage = function(req, res) {
+ 
+    res.render('homepage');
+ 
+};
+
+exports.logout = function(req, res) {
+    req.session.destroy(function(err){
+        res.render('/');
+
+    }) 
+};
+
+
