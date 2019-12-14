@@ -1,12 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
-    this.Project = sequelize.define("Project", {
+    this.Project = sequelize.define("Project", {        //Project model
         projectId: {
             type: DataTypes.INTEGER
 
         },
 
         // userId: {
-        //     type: DataTypes.STRING
+        //     type: DataTypes.STRING           <<<Hard coded column without associations>>>
 
         // },
         projectName: {
@@ -21,11 +21,11 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING
         },
     }),
-    this.Task = sequelize.define("Task", {
+    this.Task = sequelize.define("Task", {      //Tasks model
         // userId: {
         //     type: DataTypes.INTEGER
         // },
-        // projectId: {
+        // projectId: {                           <<<Hard coded columns without associations>>>
         //     type: DataTypes.INTEGER
         // },
         taskName: {
@@ -40,7 +40,7 @@ module.exports = function (sequelize, DataTypes) {
         //       type: DataTypes.STRING,
         //       allowNull: false,
         //       validate: {
-        //           len: [1,8]
+        //           len: [1,8]             <<<Hard coded columns without associations>>>
         //       }
         //   },
         //   project_id: {

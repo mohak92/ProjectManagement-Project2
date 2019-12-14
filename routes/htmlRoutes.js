@@ -2,7 +2,7 @@ var path = require("path");
 
 module.exports = function (app) {
 
-  app.get("/index", function (req, res) {
+  app.get("/signin", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
@@ -20,6 +20,10 @@ module.exports = function (app) {
 
   app.get("/projects", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/projects.html"));
+  });
+
+  app.get("/newuser", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/newUser.html"));
   });
 
 };
