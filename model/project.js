@@ -1,21 +1,23 @@
-module.exports = function (sequelize, DataTypes) {
+var orm = require("../config/orm.js");
 
-    var Project = sequelize.define("Project", {        //Project model
-        projectId: {
-            type: DataTypes.INTEGER
-
-        },
-        projectName: {
-            type: DataTypes.STRING
-
-        },
-        dueDate: {
-            type: DataTypes.DATE
-
-        },
-        projectStage: {
-            type: DataTypes.STRING
-        },
-    })
-    return Project;
+var project = {
+  selectAll: function(cb) {
+    orm.selectAll("projects", function(res) {
+      cb(res);
+    });
+  },
+  // The variables cols and vals are arrays.
+  insertOne: function(cols, vals, cb) {
+    orm.insertOne("projects", cols, vals, function(res) {
+      cb(res);
+    });
+  },
+  updateOne: function(objColVals, condition, cb) {
+    orm.updateOne("projects", objColVals, condition, function(res) {
+      cb(res);
+    });
+  }
 };
+
+// Export the database functions for the controller (burger_controller.js).
+module.exports = project;
