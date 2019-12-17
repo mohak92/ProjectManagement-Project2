@@ -12,7 +12,12 @@ module.exports = function (sequelize, DataTypes) {
         },
         taskDueDate: {
             type: DataTypes.DATE
-        }
+        },
+        // Task.associate = function(models){
+        //     Task.belongsTo(models.Project {
+        //         foreignKey: "task_id"
+        //     });
+        // }
     })
     return Task;
 }
