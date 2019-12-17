@@ -26,4 +26,8 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/newUser.html"));
   });
 
+  app.get("/logout", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
 };

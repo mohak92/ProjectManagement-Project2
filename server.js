@@ -20,6 +20,10 @@ app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get('/', function (req, res) {
+  res.render('index');
+});
+
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
@@ -41,10 +45,10 @@ db.sequelize.sync(syncOptions).then(function () {
   });
 });
 
-// app.listen(5000, function (err) {
+// app.listen(PORT, function (err) {
 //   if (!err)
 //     console.log("\nSite is live");
 //   else console.log(err)
 // });
 
-// module.exports = app;
+module.exports = app;
