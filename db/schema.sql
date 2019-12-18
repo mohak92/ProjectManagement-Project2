@@ -6,7 +6,7 @@ CREATE TABLE projects (
 	userid varchar(50) NOT NULL,
 	projectname varchar(50) DEFAULT NULL,
 	projectphase varchar(50) DEFAULT NULL,
-	duedate DATE(50),NOT NULL,
+	duedate DATE(50),
     
   Primary Key(id)
 );
@@ -16,7 +16,7 @@ CREATE TABLE tasks (
 	userid varchar(50) NOT NULL,
 	projectid varchar(50) NOT NULL,
 	taskname varchar(50) NOT NULL,
-	duedate DATE(expression),NOT NULL,
+	duedate DATE(),
   
   Primary Key (id)
 );
