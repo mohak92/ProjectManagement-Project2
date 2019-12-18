@@ -16,6 +16,11 @@ var project = {
     orm.updateOne("projects", objColVals, condition, function(res) {
       cb(res);
     });
+  },
+  onetomany: function(table, table2, col, foreignKeyOne, foreignKeyTwo, condition, cb){
+      orm.onetomany("projects", "users", "name", "projects.uid", "users.uid", condition, function(res) {
+        cb(res);
+      });
   }
 };
 

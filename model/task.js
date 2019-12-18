@@ -16,7 +16,8 @@ var task = {
     orm.updateOne("tasks", objColVals, condition, function(res) {
       cb(res);
     });
-  }
+  },
+  one
 };
 
 // Export the database functions for the controller (burger_controller.js).
