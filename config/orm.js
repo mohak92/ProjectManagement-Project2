@@ -86,7 +86,46 @@ var orm = {
 
             cb(result);
         });
+    },
+
+    onetomany: function(table, table2, col, foreignKeyOne, foreignKeyTwo, condition, cb) {
+        var queryString = "SELECT" + col + "FROM" + table + "INNER JOIN" + table2 + "ON" + foreignKeyOne + "=" + foreignKeyTwo;
+
+        queryString += " WHERE " + foreignKeyTwo;
+        queryString += condition ;
+
+
+        console.log(queryString);
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
+
+    },
+
+    manytomany: function(tableCol, col, foreignKey, condition, cb) {
+        var queryString = "SELECT" + tableCol + tableCol + "FROM" + table + "JOIN" + table + "ON" + foreignKey + "=" + foreignKey;
+
+        queryString += " WHERE ";
+        queryString += " = ";
+        queryString += condition ;
+
+
+        console.log(queryString);
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
+
     }
+
+
 };
 
 // Export the orm object for the model (cat.js).
