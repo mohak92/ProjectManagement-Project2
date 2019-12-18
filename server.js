@@ -31,7 +31,7 @@ var authRoute = require('./routes/auth.js')(app, passport);
 require('./config/passport/passport.js')(passport, db.user);
 
 
-var syncOptions = { force: true };
+var syncOptions = {  };
 
 
 // Starting the server, syncing our models ------------------------------------/
