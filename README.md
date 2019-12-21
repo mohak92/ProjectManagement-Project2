@@ -20,6 +20,8 @@ Akolade Oke - Front End. Made the HTML pages with css and bootstrap. Helped make
 
 Anish Patel - Front End and Back End. Linked all HTML pages together. Added buttons and appened some functionality to HTML. Made the html and api routes js. Made mysql database. Uploaded app to heroku. Helped make the models.
 
+https://github.com/anish0913
+
 
 
 
