@@ -1,9 +1,9 @@
 # Project Management - Project2
 
-#Overview
+# Overview
 Welcome to Project Management 101! This application displays upcoming assignments that a user or a group of developers need get done. It will layout responsibilities that need to get done and assign tasks for each user in a group. You will be able to add new users to an assingments, add new tasks for a user and submit the assinment to the customer once complete.
 
-#Technology Used
+# Technology Used
 1. HTML
 2. JavaScript
 3. Node.js
@@ -12,7 +12,7 @@ Welcome to Project Management 101! This application displays upcoming assignment
 6. ORM
 7. Passport
 
-#Meet the team and there contributions
+# Meet the team and there contributions
 
 Shehryar Ehtesham - Back End Javascript. Made a sequilize ORM. Made the functionality of Passport and authentication.(sign in and sing up for the app). Made all models and functionality. Made the presentation slides.
 
