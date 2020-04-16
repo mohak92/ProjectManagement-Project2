@@ -1,0 +1,14 @@
+import { Seeder } from "mongoose-data-seed";
+import { User } from "../server/models";
+
+
+
+
+
+
+
+
+
+
+
+export default UsersSeeder;
