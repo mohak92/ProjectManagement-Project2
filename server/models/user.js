@@ -1,42 +1,47 @@
-module.exports = function (sequelize, DataTypes) {
+const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
+const Schema = mongoose.Schema;
 
-    User = sequelize.define("user", {  //User model
+const UserSchema = new Schema({
+    firstName: {
+        type: String,
+        required: false
+    },
+    lastName: {
+        type: String,
+        required: false
+    },
+    profileImageUrl: {
+        type: String,
+        required: false
+    },
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    groups: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Group'
+    }],
+    tasks: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Task'
+    }],
+    chat: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Chat'
+    }],
+    date: {
+        type: Date,
+        default: Date.now
+    }
+});
 
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: DataTypes.INTEGER
-        },
-
-        firstname: {
-            type: DataTypes.STRING,
-            notEmpty: true
-        },
-
-        lastname: {
-            type: DataTypes.STRING,
-            notEmpty: true
-        },
-
-        email: {
-            type: DataTypes.STRING,
-            validate: {
-                isEmail: true
-            }
-        },
-
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-
-        dateOfBirth: {
-            type: DataTypes.STRING,
-            defaultValue: "Personal"
-        },
-        isAdmin: {
-            type: DataTypes.BOOLEAN
-        }
-    })
-    return User;
-};
+UserSchema.plugin(uniqueValidator);
+const User = mongoose.model('users', UserSchema);
+module.exports = User;
