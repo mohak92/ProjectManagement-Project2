@@ -1,6 +1,6 @@
 require("dotenv").config();
 var express = require("express");
-var db = require("./models");
+var db = require("./models/task");
 var app = express();
 var passport = require('passport');
 var session = require('express-session');
