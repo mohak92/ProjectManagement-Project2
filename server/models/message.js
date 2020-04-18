@@ -19,7 +19,7 @@ const MessageSchema = new Schema({
     default: false,
     required: true
   },
-  timestamp: {
+  timeStamp: {
     type: Date,
   }
 });
