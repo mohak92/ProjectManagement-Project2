@@ -1,33 +1,26 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-const TaskSchema = new Schema({
-  name: {
-    type: String,
-    default: 'Task'
-  },
-  description: {
-    type: String
-  },
-  userId: {
+const MessageSchema = new Schema({
+  chatId: {
     type: String,
     required: true
   },
-  groupId: {
+  body: {
     type: String,
     required: true
   },
-  deadline: {
-    type: Date,
-    required: true
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   },
-  estTime: {
-    type: Number,
-    required: true
-  },
-  completed: {
+  anon: {
     type: Boolean,
-    default: false
+    default: false,
+    required: true
+  },
+  timestamp: {
+    type: Date,
   }
 });
 
