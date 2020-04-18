@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema;
+const { Schema } = mongoose
 
 const GroupSchema = new Schema({
   name: {
@@ -21,5 +21,6 @@ const GroupSchema = new Schema({
   }
 });
 
+const Group = mongoose.model('groups', GroupSchema);
 
-module.exports = Group =  mongoose.model('groups', GroupSchema);
+module.exports = Group;
