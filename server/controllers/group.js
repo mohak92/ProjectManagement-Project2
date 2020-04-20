@@ -16,6 +16,7 @@ exports.getGroups = [
 
 exports.getGroup = [
     function (req, res) {
-        
+    const { groupId } = req.params;
+
     }
 ]
