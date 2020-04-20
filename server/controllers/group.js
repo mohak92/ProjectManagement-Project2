@@ -14,3 +14,8 @@ exports.getGroups = [
     }
 ];
 
+exports.getGroup = [
+    function (req, res) {
+        
+    }
+]
