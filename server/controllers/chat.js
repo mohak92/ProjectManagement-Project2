@@ -1,6 +1,8 @@
 const Chat = require('../models/chat');
 const Message = require('../models/message');
 
+//importing the chat and message models
+
 exports.getChats = (req, res, next) =>{
     //index view for the chats
     Chat.find({ participants: req.query.userId }).exec((err, chats) =>{
