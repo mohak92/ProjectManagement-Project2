@@ -16,7 +16,13 @@ exports.getGroups = [
 
 exports.getGroup = [
     function (req, res) {
-    const { groupId } = req.params;
+        const { groupId } = req.params;
+        Group.findOne({ _id: groupId }, (err, group) => {
+            if (!group) return res.status(404).send({
+                success: false,
+                error: 'Group not found'
+            });
+        })
 
     }
 ]
