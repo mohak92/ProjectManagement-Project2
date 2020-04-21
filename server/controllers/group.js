@@ -22,7 +22,26 @@ exports.getGroup = [
                 success: false,
                 error: 'Group not found'
             });
-        })
+        });
 
     }
-]
+];
+
+exports.createGroup = [
+    function (req, res){
+        const newGroup = new Group({
+            name: req.body.users,
+            imageUrl: "",
+            users: req.body.users,
+            tasks: []
+        });
+        newGroup.save().then(group => {
+            res.json({
+                success: true,
+                group
+            });
+        }, err => {
+            res.status(400).send(err);
+        });
+    }
+];
